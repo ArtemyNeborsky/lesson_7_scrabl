@@ -62,19 +62,21 @@ def get_word_with_letter(letter, player_number):
             print(f"Ошибка слово должно начинаться с буквы '{letter}'")
 
 
-if __name__ == '__main__':
+def main():
     letter = get_random_letter()
     print(f"Начальная буква: {letter}")
-
-    word1 = get_word_with_letter(letter, 1)
-    word2 = get_word_with_letter(letter, 2)
-
-    print(f"Игрок 1: {word1}: {calculate_score(word1)} очков")
-    print(f"Игрок 2: {word2}: {calculate_score(word2)} очков")
-    if calculate_score(word1) > calculate_score(word2):
+    first_word = get_word_with_letter(letter, 1)
+    second_word = get_word_with_letter(letter, 2)
+    print(f"Игрок 1: {first_word}: {calculate_score(first_word)} очков")
+    print(f"Игрок 2: {second_word}: {calculate_score(second_word)} очков")
+    if calculate_score(first_word) > calculate_score(second_word):
         print("Игрок 1 победил")
-    elif calculate_score(word1) == calculate_score(word2):
+    elif calculate_score(first_word) == calculate_score(second_word):
         print("Ничья")
     else:
         print("Игрок 2 победил")
+
+
+if __name__ == '__main__':
+    main()
 
